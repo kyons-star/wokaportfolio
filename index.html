@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>woka – portfolio builder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <a class="logo" href="#home">woka</a>
+    <nav>
+      <a class="link" href="#home" data-services>Services</a>
+      <span class="who" id="who"></span>
+      <a class="btn" id="navbtn" href="#login">Log in</a>
+    </nav>
+  </header>
+
+  <section class="view" id="v-home">
+    <div class="hero">
+      <h1>WELCOME</h1>
+      <p>Showcase your best work in minutes. Pick a style, add your projects, and share your portfolio with the world.</p>
+      <a class="btn primary" href="#create">Get started</a>
+    </div>
+    <div class="styles" id="services">
+      <h2>PORTFOLIO</h2>
+      <p>Choose a style and fill in your details.</p>
+      <div class="slider" id="slider" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Portfolio styles">
+        <div class="tabs3" role="tablist"><button type="button" class="tab on" role="tab" aria-selected="true" aria-label="Simple"><div class="mini" style="background-image:var(--s1)"></div></button><button type="button" class="tab" role="tab" aria-selected="false" aria-label="Modern"><div class="mini" style="background-image:var(--s2)"></div></button><button type="button" class="tab" role="tab" aria-selected="false" aria-label="Creative"><div class="mini" style="background-image:var(--s3)"></div></button></div>
+        <button type="button" class="btn primary" id="useStyle">Use this style</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="v-dashboard">
+    <div class="dash">
+      <h2>DASHBOARD</h2>
+      <p id="dwelcome"></p>
+      <div class="sec">
+        <h2 style="font-size:20px">Your templates</h2>
+        <p id="tcount"></p>
+        <div class="mine" id="mine"></div>
+      </div>
+      <div class="sec pick">
+        <h2 style="font-size:20px">Choose a template</h2>
+        <p>Pick a style to create a new template.</p>
+        <div class="cards">
+          <button class="card" data-pick="Simple"><div class="thumb t1"></div><b>Simple</b><span>Plain and readable</span></button>
+          <button class="card" data-pick="Modern"><div class="thumb t2"></div><b>Modern</b><span>Bold header, project grid</span></button>
+          <button class="card" data-pick="Creative"><div class="thumb t3"></div><b>Creative</b><span>Warm, loose layout</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="v-login">
+    <div class="auth"><div class="box">
+      <div class="tabs"><a class="on" href="#login">Log in</a><a href="#create">Create account</a></div>
+      <h2 class="t">LOG IN</h2>
+      <p class="sub">Welcome back, sign in to manage your portfolio.</p>
+      <label for="ln">Full name</label>
+      <input type="text" id="ln" placeholder="your name" autocomplete="name">
+      <label for="lp">Password</label>
+      <input type="password" id="lp" placeholder="enter your password" autocomplete="current-password">
+      <div class="remember"><input type="checkbox" id="rem"><label for="rem" style="margin:0;text-transform:none;font-weight:400;font-size:13px">remember me</label></div>
+      <button class="btn full primary" id="loginBtn">Log in</button>
+      <div class="msg" id="lmsg" role="status"></div>
+      <p class="alt">New to woka? <a href="#create">Create account</a></p>
+    </div></div>
+  </section>
+
+  <section class="view" id="v-create">
+    <div class="auth"><div class="create">
+      <div>
+        <h2 class="t" style="text-align:left">CREATE ACCOUNT</h2>
+        <p class="sub" style="text-align:left">Start building your portfolio in minutes.</p>
+        <label for="cn">Full name</label>
+        <input type="text" id="cn" placeholder="your name" autocomplete="name">
+        <label for="cp">Password</label>
+        <input type="password" id="cp" placeholder="at least 8 characters" autocomplete="new-password">
+        <label for="cc">Confirm password</label>
+        <input type="password" id="cc" placeholder="re-enter your password" autocomplete="new-password">
+        <button class="btn full primary" id="createBtn">Create account</button>
+        <div class="msg" id="cmsg" role="status"></div>
+        <p class="alt">Already have an account? <a href="#login">Log in</a></p>
+      </div>
+      <div class="side">
+        <div class="thumb t1"></div>
+        <p>Excited to make your best portfolio? Create an account, and watch your template come to life in seconds.</p>
+      </div>
+    </div></div>
+  </section>
+
+  
+  <section class="view" id="v-editor">
+    <div class="dash"><div class="ed">
+      <h2 id="etitle">PORTFOLIO INFORMATION</h2>
+      <p>Fill in your details. Your portfolio is generated in the style you chose.</p>
+      <h3>Personal information</h3>
+      <label for="e-name">Full name</label><input type="text" id="e-name" autocomplete="name">
+      <div class="pic"><div id="epic"></div><div><label style="margin-top:0" for="efile">Profile picture</label><input type="file" id="efile" accept="image/*"></div></div>
+      <div class="g2"><div><label for="e-email">Email</label><input type="email" id="e-email" autocomplete="email"></div>
+      <div><label for="e-phone">Contact number</label><input type="tel" id="e-phone" autocomplete="tel"></div></div>
+      <label for="e-addr">Address</label><input type="text" id="e-addr" autocomplete="street-address">
+      <h3>About me</h3>
+      <textarea id="e-about" rows="5" placeholder="Tell visitors who you are and what you do"></textarea>
+      <h3>Skills</h3>
+      <input type="text" id="e-skills" placeholder="Separate skills with commas, e.g. Photoshop, HTML, Public speaking">
+      <div id="lists"></div>
+      <div class="bar"><button class="btn primary" id="saveBtn">Save and preview</button><a class="btn" href="#dashboard">Back to dashboard</a></div>
+      <div class="msg" id="emsg" role="status"></div>
+    </div></div>
+  </section>
+
+  <section class="view" id="v-view">
+    <div class="dash">
+      <div class="bar" style="margin:0 0 24px"><a class="btn" href="#dashboard">Dashboard</a><a class="btn primary" id="editLink" href="#dashboard">Edit information</a><button class="btn" onclick="window.print()">Save as PDF</button></div>
+      <div id="pfwrap"></div>
+    </div>
+  </section>
+
+  <footer>© woka · portfolio builder</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
